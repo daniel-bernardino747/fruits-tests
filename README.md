@@ -38,15 +38,18 @@ Os testes e suas descrições:
 
 ```
 POST /fruits
-  ✓ should respond with status 409 when name already existing in database (209 ms)
-  ✓ should respond with status 201 when have created fruit (12 ms)
-  ✓ should insert a new ticket in the database (10 ms)
+  ✓ should respond with status 422 when body is invalid (213 ms)
+  ✓ should respond with status 409 when name already existing in database (71 ms)
+  ✓ should respond with status 201 when have created fruit (21 ms)
+  ✓ should insert a new ticket in the database (28 ms)
+
 GET /fruits
-  ✓ should respond with status 200 and fruits data (21 ms)
+  ✓ should respond with status 200 and fruits data (13 ms)
+
 GET /fruits/:id
-  ✓ should respond with status 404 when id is invalid (37 ms)
-  ✓ should respond with status 200 and fruit data when id is valid (16 ms)
+  ✓ should respond with status 404 when id is invalid (46 ms)
+  ✓ should respond with status 200 and fruit data when id is valid (10 ms)
 
 Test Suites: 1 passed, 1 total
-Tests:       6 passed, 6 total
+Tests:       7 passed, 7 total
 ```

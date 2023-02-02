@@ -12,6 +12,12 @@ beforeEach(() => {
 });
 
 describe("POST /fruits", () => {
+  it("should respond with status 422 when body is invalid", async () => {
+    const response = await server.post("/fruits").send({});
+
+    expect(response.status).toEqual(httpStatus.UNPROCESSABLE_ENTITY);
+  });
+
   it("should respond with status 409 when name already existing in database", async () => {
     const nameFruit = "Banana";
     const newFruit = createDataFruit(nameFruit);
